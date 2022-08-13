@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
+<link href='style.css' rel='stylesheet' type='text/css'>
+<title>15dichos 测试</title>
+<link rel="icon" type="x-icon" href="icon.png">
+<link rel="shortcut icon" type="x-icon" href="icon.png">
+<meta charset="utf-8">
+<script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"15dicho",utcoffset:"8"}))};sessionStorage.setItem("_swa","1");</script>
+</head>
+<body>
+<script type="application/javascript" src="questions.js"></script>
+<script type="application/javascript" src="base64.js"></script>
+<h1>15dichos</h1>
+<hr>
+<h2 style="text-align:center;" id="question-number">Loading...</h2>
+<p class="question" id="question-text"></p>
+<button class="button stronglyAgree" onclick="next_question( 1.0)">是</button> <br>
+<button class="button agree" onclick="next_question( 0.5)">倾向于是</button> <br>
+<button class="button neutral" onclick="next_question( 0.0)">中立/不确定/混合/看不懂</button> <br>
+<button class="button disagree" onclick="next_question(-0.5)">倾向于否</button> <br>
+<button class="button stronglyDisagree" onclick="next_question(-1.0)">否</button> <br>
+<button class="small_button" onclick="prev_question()" id="back_button">返回</button>
+<button class="small_button_off" id="back_button_off">返回</button><br>
+
+<script>
+    var question_length = 120;
+    var questions = new Array();
+    
+    function getQueryVariable(variable)
+    {
+           var query = window.location.search.substring(1)
+           var vars = query.split("&")
+           for (var i=0;i<vars.length;i++) {
+                   var pair = vars[i].split("=")
+                   if(pair[0] == variable) {return pair[1]}
+           }
+           return(NaN);
+    }
+    
+    function randomSelect(result, arr, n) {
+        var len = arr.length, taken = new Array(len);
+        while (n--) {
+            var x = Math.floor(Math.random() * len);
+            result.push(arr[x in taken ? taken[x] : x]);
+            taken[x] = --len in taken ? taken[len] : len;
+        }
+        return(NaN);
+    }
+    
+    if (getQueryVariable("v") == "all") {
+        question_length = 240;
+        questions = questions.concat(e_pq, e_nq, n_pq, n_nq, t_pq, t_nq, p_pq, p_nq, 
+            peri_pq, peri_nq, asc_pq, asc_nq, que_pq, que_nq, 
+            right_pq, right_nq, stat_pq, stat_nq, pos_pq, pos_nq, con_pq, con_nq, demo_pq, demo_nq, inci_pq, inci_nq, tact_pq, tact_nq)
+    } else if (getQueryVariable("v") == "simple"){
+        question_length = 60;
+        randomSelect(questions, e_pq, 4);
+        randomSelect(questions, e_nq, 4);
+        randomSelect(questions, n_pq, 4);
+        randomSelect(questions, n_nq, 4);
+        randomSelect(questions, t_pq, 4);
+        randomSelect(questions, t_nq, 4);
+        randomSelect(questions, p_pq, 4);
+        randomSelect(questions, p_nq, 4);
+        randomSelect(questions, peri_pq, 2);
+        randomSelect(questions, peri_nq, 2);
+        randomSelect(questions, asc_pq, 2);
+        randomSelect(questions, asc_nq, 2);
+        randomSelect(questions, que_pq, 2);
+        randomSelect(questions, que_nq, 2);
+        randomSelect(questions, right_pq, 1);
+        randomSelect(questions, right_nq, 1);
+        randomSelect(questions, stat_pq, 1);
+        randomSelect(questions, stat_nq, 1);
+        randomSelect(questions, pos_pq, 1);
+        randomSelect(questions, pos_nq, 1);
+        randomSelect(questions, con_pq, 1);
+        randomSelect(questions, con_nq, 1);
+        randomSelect(questions, demo_pq, 1);
+        randomSelect(questions, demo_nq, 1);
+        randomSelect(questions, inci_pq, 1);
+        randomSelect(questions, inci_nq, 1);
+        randomSelect(questions, tact_pq, 1);
+        randomSelect(questions, tact_nq, 1);
+        randomSelect(questions, yield_pq, 1);
+        randomSelect(questions, yield_nq, 1);
+    } else {
+        randomSelect(questions, e_pq, 8);
+        randomSelect(questions, e_nq, 8);
+        randomSelect(questions, n_pq, 8);
+        randomSelect(questions, n_nq, 8);
+        randomSelect(questions, t_pq, 8);
+        randomSelect(questions, t_nq, 8);
+        randomSelect(questions, p_pq, 8);
+        randomSelect(questions, p_nq, 8);
+        randomSelect(questions, peri_pq, 4);
+        randomSelect(questions, peri_nq, 4);
+        randomSelect(questions, asc_pq, 4);
+        randomSelect(questions, asc_nq, 4);
+        randomSelect(questions, que_pq, 4);
+        randomSelect(questions, que_nq, 4);
+        randomSelect(questions, right_pq, 2);
+        randomSelect(questions, right_nq, 2);
+        randomSelect(questions, stat_pq, 2);
+        randomSelect(questions, stat_nq, 2);
+        randomSelect(questions, pos_pq, 2);
+        randomSelect(questions, pos_nq, 2);
+        randomSelect(questions, con_pq, 2);
+        randomSelect(questions, con_nq, 2);
+        randomSelect(questions, demo_pq, 2);
+        randomSelect(questions, demo_nq, 2);
+        randomSelect(questions, inci_pq, 2);
+        randomSelect(questions, inci_nq, 2);
+        randomSelect(questions, tact_pq, 2);
+        randomSelect(questions, tact_nq, 2);
+        randomSelect(questions, yield_pq, 2);
+        randomSelect(questions, yield_nq, 2);
+    }
+    for (let i = 1; i < questions.length; i++) {
+        const random = Math.floor(Math.random() * (i + 1));
+        [questions[i], questions[random]] = [questions[random], questions[i]];
+    }
+
+    
+    var max_score = {
+        'e': 0,
+        'n': 0,
+        't': 0,
+        'p': 0,
+        'peri': 0,
+        'asc': 0,
+        'que': 0,
+        'right': 0,
+        'stat': 0,
+        'pos': 0,
+        'con': 0,
+        'demo': 0,
+        'inci': 0,
+        'tact': 0,
+        'yield': 0
+    }
+    var score_array = {
+        'e': new Array(question_length),
+        'n': new Array(question_length),
+        't': new Array(question_length),
+        'p': new Array(question_length),
+        'peri': new Array(question_length),
+        'asc': new Array(question_length),
+        'que': new Array(question_length),
+        'right': new Array(question_length),
+        'stat': new Array(question_length),
+        'pos': new Array(question_length),
+        'con': new Array(question_length),
+        'demo': new Array(question_length),
+        'inci': new Array(question_length),
+        'tact': new Array(question_length),
+        'yield': new Array(question_length)
+    }
+    
+    var qn = 0; // Question number
+    init_question();
+    function init_question() {
+        document.getElementById("question-text").innerHTML = questions[qn].question;
+        document.getElementById("question-number").innerHTML = "Question " + (qn + 1) + " of " + (question_length);
+        if (qn == 0) {
+            document.getElementById("back_button").style.display = 'none';
+            document.getElementById("back_button_off").style.display = 'block';
+        } else {
+            document.getElementById("back_button").style.display = 'block';
+            document.getElementById("back_button_off").style.display = 'none';
+        }
+
+    }
+
+    function next_question(mult) {
+        score_array[questions[qn].dim][qn] = mult * questions[qn].eff;
+        max_score[questions[qn].dim] += Math.abs(questions[qn].eff);
+        qn++;
+        if (qn < question_length) {
+            init_question();
+        } else {
+            results();
+        }
+    }
+
+    function prev_question() {
+        if (qn == 0) {
+            return;
+        }
+        qn--;
+        init_question();
+    }
+
+    function calc_score(score, maxv) {
+        num = Math.round(1000*(maxv+score)/(2*maxv) + Number.EPSILON)/10;
+        return [Math.trunc(num), Math.trunc((num - Math.trunc(num))*10)];
+    }
+
+    var score_index = {
+            'e': 0,
+            'n': 1,
+            't': 2,
+            'p': 3,
+            'peri': 4,
+            'asc': 5,
+            'que': 6,
+            'right': 7,
+            'stat': 8,
+            'pos': 9,
+            'con': 10,
+            'demo': 11,
+            'inci': 12,
+            'tact': 13,
+            'yield': 14
+    }
+
+    function results() {
+        let final_score = new Uint8Array(31);
+        for (var dim in score_index) {
+            scores = calc_score(score_array[dim].reduce((a, b) => a + b, 0), max_score[dim]);
+            final_score[score_index[dim]] = scores[0];
+            final_score[score_index[dim]+15] = scores[1];
+            
+        }
+        if (getQueryVariable("v") == "all") {
+            final_score[30] = 24
+        } else if (getQueryVariable("v") == "simple") {
+            final_score[30] = 6
+        } else {
+            final_score[30] = 12
+        }
+        location.href = `results.html`
+            + `?s=${Base64.fromUint8Array(final_score, true)}`
+    }
+</script>
+</body>

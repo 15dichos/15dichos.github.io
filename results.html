@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
+<link href='style.css' rel='stylesheet' type='text/css'>
+<title>15dichos 结果</title>
+<link rel="icon" type="x-icon" href="icon.png">
+<link rel="shortcut icon" type="x-icon" href="icon.png">
+<meta charset="utf-8">
+
+<script>
+  version = "0.2 Beta"
+</script>
+</head>
+<script type="application/javascript" src="types.js"></script>
+<script type="application/javascript" src="weight.js"></script>
+<script type="application/javascript" src="base64.js"></script>
+
+<body>
+<h1>15dichos</h1>
+<hr>
+
+<h2>结果<span class="weight-300" id="test-version"></span>：</h2>
+
+<br>
+<h2><span id="max-type-label"></span><span class="weight-300" id="type-label"></span></h2>
+<hr>
+
+<h2><span class="weight-300" id="e-label">中立</span></h2>
+<div class="axis">
+    <img id="img-ep" src="dicho_images/extravert.svg" height="128pt"/>
+    <div class="bar sign-p" id="bar-ep"><div class="text-wrapper-p" id="ep"></div></div>
+    <div class="bar sign-n" id="bar-en"><div class="text-wrapper-n" id="en"></div></div>
+    <img id="img-en" src="dicho_images/introvert.svg" height="128pt"/>
+</div>
+<h2><span class="weight-300" id="n-label">中立</span></h2>
+<div class="axis">
+    <img id="img-np" src="dicho_images/intuitive.svg" height="128pt"/>
+    <div class="bar sign-p" id="bar-np"><div class="text-wrapper-p" id="np"></div></div>
+    <div class="bar sign-n" id="bar-nn"><div class="text-wrapper-n" id="nn"></div></div>
+    <img id="img-nn" src="dicho_images/sensing.svg" height="128pt"/>
+</div>
+<h2><span class="weight-300" id="t-label">中立</span></h2>
+<div class="axis">
+    <img id="img-tp" src="dicho_images/logical.svg" height="128pt"/>
+    <div class="bar sign-p" id="bar-tp"><div class="text-wrapper-p" id="tp"></div></div>
+    <div class="bar sign-n" id="bar-tn"><div class="text-wrapper-n" id="tn"></div></div>
+    <img id="img-tn" src="dicho_images/ethical.svg" height="128pt"/>
+</div>
+<h2><span class="weight-300" id="p-label">中立</span></h2>
+<div class="axis">
+    <img id="img-pp" src="dicho_images/irrational.svg" height="128pt"/>
+    <div class="bar sign-p" id="bar-pp"><div class="text-wrapper-p" id="pp"></div></div>
+    <div class="bar sign-n" id="bar-pn"><div class="text-wrapper-n" id="pn"></div></div>
+    <img id="img-pn" src="dicho_images/rational.svg" height="128pt"/>
+</div>
+<h2><span class="weight-300" id="peri-label">中立</span></h2>
+<div class="axis">
+    <img id="img-perip" src="dicho_images/juditious.svg" height="128pt"/>
+    <div class="bar sign-p" id="bar-perip"><div class="text-wrapper-p" id="perip"></div></div>
+    <div class="bar sign-n" id="bar-perin"><div class="text-wrapper-n" id="perin"></div></div>
+    <img id="img-perin" src="dicho_images/decisive.svg" height="128pt"/>
+</div>
+<h2><span class="weight-300" id="asc-label">中立</span></h2>
+<div class="axis">
+    <img id="img-ascp" src="dicho_images/merry.svg" height="128pt"/>
+    <div class="bar sign-p" id="bar-ascp"><div class="text-wrapper-p" id="ascp"></div></div>
+    <div class="bar sign-n" id="bar-ascn"><div class="text-wrapper-n" id="ascn"></div></div>
+    <img id="img-ascn" src="dicho_images/serious.svg" height="128pt"/>
+</div>
+<h2><span class="weight-300" id="que-label">中立</span></h2>
+<div class="axis">
+    <img id="img-quep" src="dicho_images/questioning.svg" height="128pt"/>
+    <div class="bar sign-p" id="bar-quep"><div class="text-wrapper-p" id="quep"></div></div>
+    <div class="bar sign-n" id="bar-quen"><div class="text-wrapper-n" id="quen"></div></div>
+    <img id="img-quen" src="dicho_images/declaring.svg" height="128pt"/>
+</div>
+<h2><span class="weight-300" id="right-label">中立</span></h2>
+<div class="axis">
+    <img id="img-rightp" src="dicho_images/process.svg" height="128pt"/>
+    <div class="bar sign-p" id="bar-rightp"><div class="text-wrapper-p" id="rightp"></div></div>
+    <div class="bar sign-n" id="bar-rightn"><div class="text-wrapper-n" id="rightn"></div></div>
+    <img id="img-rightn" src="dicho_images/result.svg" height="128pt"/>
+</div>
+<h2><span class="weight-300" id="stat-label">中立</span></h2>
+<div class="axis">
+    <img id="img-statp" src="dicho_images/static.svg" height="128pt"/>
+    <div class="bar sign-p" id="bar-statp"><div class="text-wrapper-p" id="statp"></div></div>
+    <div class="bar sign-n" id="bar-statn"><div class="text-wrapper-n" id="statn"></div></div>
+    <img id="img-statn" src="dicho_images/dynamic.svg" height="128pt"/>
+</div>
+<h2><span class="weight-300" id="pos-label">中立</span></h2>
+<div class="axis">
+    <img id="img-posp" src="dicho_images/positivism.svg" height="128pt"/>
+    <div class="bar sign-p" id="bar-posp"><div class="text-wrapper-p" id="posp"></div></div>
+    <div class="bar sign-n" id="bar-posn"><div class="text-wrapper-n" id="posn"></div></div>
+    <img id="img-posn" src="dicho_images/negativism.svg" height="128pt"/>
+</div>
+<h2><span class="weight-300" id="con-label">中立</span></h2>
+<div class="axis">
+    <img id="img-conp" src="dicho_images/constructive.svg" height="128pt"/>
+    <div class="bar sign-p" id="bar-conp"><div class="text-wrapper-p" id="conp"></div></div>
+    <div class="bar sign-n" id="bar-conn"><div class="text-wrapper-n" id="conn"></div></div>
+    <img id="img-conn" src="dicho_images/emotive.svg" height="128pt"/>
+</div>
+<h2><span class="weight-300" id="demo-label">中立</span></h2>
+<div class="axis">
+    <img id="img-demop" src="dicho_images/democratic.svg" height="128pt"/>
+    <div class="bar sign-p" id="bar-demop"><div class="text-wrapper-p" id="demop"></div></div>
+    <div class="bar sign-n" id="bar-demon"><div class="text-wrapper-n" id="demon"></div></div>
+    <img id="img-demon" src="dicho_images/aristocratic.svg" height="128pt"/>
+</div>
+<h2><span class="weight-300" id="inci-label">中立</span></h2>
+<div class="axis">
+    <img id="img-incip" src="dicho_images/carefree.svg" height="128pt"/>
+    <div class="bar sign-p" id="bar-incip"><div class="text-wrapper-p" id="incip"></div></div>
+    <div class="bar sign-n" id="bar-incin"><div class="text-wrapper-n" id="incin"></div></div>
+    <img id="img-incin" src="dicho_images/farsighted.svg" height="128pt"/>
+</div>
+<h2><span class="weight-300" id="tact-label">中立</span></h2>
+<div class="axis">
+    <img id="img-tactp" src="dicho_images/tactical.svg" height="128pt"/>
+    <div class="bar sign-p" id="bar-tactp"><div class="text-wrapper-p" id="tactp"></div></div>
+    <div class="bar sign-n" id="bar-tactn"><div class="text-wrapper-n" id="tactn"></div></div>
+    <img id="img-tactn" src="dicho_images/strategic.svg" height="128pt"/>
+</div>
+<h2><span class="weight-300" id="yield-label">中立</span></h2>
+<div class="axis">
+    <img id="img-yieldp" src="dicho_images/yielding.svg" height="128pt"/>
+    <div class="bar sign-p" id="bar-yieldp"><div class="text-wrapper-p" id="yieldp"></div></div>
+    <div class="bar sign-n" id="bar-yieldn"><div class="text-wrapper-n" id="yieldn"></div></div>
+    <img id="img-yieldn" src="dicho_images/obstinate.svg" height="128pt"/>
+</div>
+<br>
+
+<hr/>
+<br>
+<button class="button" onclick="location.href='index.html';">返回主页</button> <br>
+<script>
+    function getQueryVariable(variable)
+    {
+           var query = window.location.search.substring(1)
+           var vars = query.split("&")
+           for (var i=0;i<vars.length;i++) {
+                   var pair = vars[i].split("=")
+                   if(pair[0] == variable) {return pair[1]}
+           }
+           return(NaN);
+    }
+    
+    var score_index = {
+            'e': 0,
+            'n': 1,
+            't': 2,
+            'p': 3,
+            'peri': 4,
+            'asc': 5,
+            'que': 6,
+            'right': 7,
+            'stat': 8,
+            'pos': 9,
+            'con': 10,
+            'demo': 11,
+            'inci': 12,
+            'tact': 13,
+            'yield': 14
+    }
+    var final_score_p = {
+        'e': 0,
+        'n': 0,
+        't': 0,
+        'p': 0,
+        'peri': 0,
+        'asc': 0,
+        'que': 0,
+        'right': 0,
+        'stat': 0,
+        'pos': 0,
+        'con': 0,
+        'demo': 0,
+        'inci': 0,
+        'tact': 0,
+        'yield': 0
+    }
+    var final_score_n = {
+        'e': 0,
+        'n': 0,
+        't': 0,
+        'p': 0,
+        'peri': 0,
+        'asc': 0,
+        'que': 0,
+        'right': 0,
+        'stat': 0,
+        'pos': 0,
+        'con': 0,
+        'demo': 0,
+        'inci': 0,
+        'tact': 0,
+        'yield': 0
+    }
+    
+    uint8score = Base64.toUint8Array(getQueryVariable("s"))
+    document.getElementById("test-version").innerHTML = "（" + (uint8score[30]*10).toFixed() + " 题版）"
+    
+    function getScore(name) {
+        return uint8score[score_index[name]] + uint8score[score_index[name]+15]/10
+    }
+
+    function setBarValue(name, value) {
+        innerel = document.getElementById(name)
+        outerel = document.getElementById("bar-" + name)
+        outerel.style.width = (value + "%")
+        innerel.innerHTML = (value + "%")
+        if (innerel.offsetWidth + 20 > outerel.offsetWidth) {
+            innerel.style.visibility = "hidden"
+        }
+    }
+    
+    var labelp = ["外倾","直觉","逻辑","非理性","审慎","快乐","提问","过程","静态","积极主义","建构主义","开明","无虑","战术","顺从"]
+    var labeln = ["内倾","感觉","伦理","理性","果断","严肃","声明","结果","动态","消极主义","情感主义","贵族","远视","战略","固执"]
+
+    function setLabel(name, val) {
+        if (val > 50) { return labelp[score_index[name]] } else
+        if (val < 50) { return labeln[score_index[name]] } else
+            {return "中立"}
+    }
+    
+    for (var dim in score_index) {
+        final_score_p[dim] = getScore(dim);
+        final_score_n[dim] = (100 - final_score_p[dim]).toFixed(1);
+        setBarValue(dim+"p", final_score_p[dim]);
+        setBarValue(dim+"n", final_score_n[dim]);
+        document.getElementById(dim+"-label").innerHTML = setLabel(dim, final_score_p[dim])
+    }
+
+    type = ""
+    for (var i = 0; i < types.length; i++) {
+        dist = 0
+        for (var dim in score_index) {
+            if (types[i].scores[dim] > 50 && final_score_p[dim] > types[i].scores[dim]) {
+                dist += 0;
+            } else if (types[i].scores[dim] < 50 && final_score_p[dim] < types[i].scores[dim]) {
+                dist += 0;
+            } else {
+                dist += Math.abs(types[i].scores[dim] - final_score_p[dim]) * weight[dim];
+            }
+        }
+        types[i]["dist"] = dist
+    }
+    types.sort(function(a,b){return a.dist-b.dist})
+    result_string = ""
+    for (var i = 1; i < types.length; i++) {
+        if (i != 0) {
+            if (Math.abs(types[i-1].dist - types[i].dist) < Number.EPSILON*Math.pow(2,2)){
+                result_string += " = ";
+            } else {
+                result_string += " > ";
+            }
+        }
+        result_string += types[i].name;
+    }
+    document.getElementById("max-type-label").innerHTML = types[0].name
+    document.getElementById("type-label").innerHTML = result_string
+
+    </script>
+</body>
