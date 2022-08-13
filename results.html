@@ -242,7 +242,7 @@
             } else if (types[i].scores[dim] < 50 && final_score_p[dim] < types[i].scores[dim]) {
                 dist += 0;
             } else {
-                dist += Math.abs(types[i].scores[dim] - final_score_p[dim]) * weight[dim];
+                dist += Math.pow(Math.abs(types[i].scores[dim] - final_score_p[dim])) * weight[dim];
             }
         }
         types[i]["dist"] = dist
