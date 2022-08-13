@@ -226,7 +226,7 @@
     }
     
     for (var dim in score_index) {
-        final_score_p[dim] = getScore(dim);
+        final_score_p[dim] = getScore(dim).toFixed(1);
         final_score_n[dim] = (100 - final_score_p[dim]).toFixed(1);
         setBarValue(dim+"p", final_score_p[dim]);
         setBarValue(dim+"n", final_score_n[dim]);
