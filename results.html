@@ -131,6 +131,8 @@
     <img id="img-yieldn" src="dicho_images/obstinate.svg" height="128pt"/>
 </div>
 <br>
+<hr>
+<p><a href="dicho_meaning.html">了解二分法的语义</a></p>
 
 <hr/>
 <br>
@@ -249,6 +251,7 @@
     }
     types.sort(function(a,b){return a.dist-b.dist})
     result_string = ""
+    console.log(types[0].name, types[0].dist.toFixed(2))
     for (var i = 1; i < types.length; i++) {
         if (i != 0) {
             if (Math.abs(types[i-1].dist - types[i].dist) < Number.EPSILON*Math.pow(2,2)){
@@ -258,6 +261,7 @@
             }
         }
         result_string += types[i].name;
+        console.log(types[i].name, types[i].dist.toFixed(2))
     }
     document.getElementById("max-type-label").innerHTML = types[0].name
     document.getElementById("type-label").innerHTML = result_string
