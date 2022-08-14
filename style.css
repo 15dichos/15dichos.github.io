@@ -293,3 +293,16 @@ span.weight-300 {
     -ms-appearance:none;
     background: url(down.svg) no-repeat scroll right center #eee;           
 }
+
+a {
+  color: #3377a9;
+  text-decoration: none;
+  opacity: 0.9;
+  transition: all 0.2s;
+}
+
+a:hover {
+  border-bottom: 0.16em solid #368ccb;
+  border-bottom: 0.16em solid #368ccb;
+  color: #368ccb;
+}
