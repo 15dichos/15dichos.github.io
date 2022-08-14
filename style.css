@@ -306,3 +306,8 @@ a:hover {
   border-bottom: 0.16em solid #368ccb;
   color: #368ccb;
 }
+
+div.twobar>div {
+  margin: 10px;
+  flex: 1 1 0;
+}
