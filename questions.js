@@ -930,7 +930,7 @@ right_pq = [
 ];
 right_nq = [
     {
-        "question": "我喜欢观察复杂的现象，简化它们。",
+        "question": "在解决问题的时候，我喜欢简化它们。",
         "dim": "right",
         "eff": -4
     },
