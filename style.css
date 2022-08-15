@@ -311,3 +311,16 @@ div.twobar>div {
   margin: 10px;
   flex: 1 1 0;
 }
+
+div.twobar>div>div {
+  display:flex;
+  align-items:center;
+}
+
+div.twobar>div>div>h2 {
+  margin:10px;
+}
+
+div.twobar>div>p {
+  line-height: 1.3;
+}
