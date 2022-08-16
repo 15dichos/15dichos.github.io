@@ -307,6 +307,13 @@ a:hover {
   color: #368ccb;
 }
 
+div.twobar {
+  width: 100%;
+  display: flex;
+  align-items:flex-start;
+  justify-content:space-around;
+}
+
 div.twobar>div {
   margin: 10px;
   flex: 1 1 0;
